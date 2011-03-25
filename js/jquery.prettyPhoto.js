@@ -30,6 +30,7 @@
 			callback: function(){}, /* Called when prettyPhoto is closed */
 			container_padding_height: 0, /* Adding extra container height to provide more padding/whitespace */
 			container_padding_width: 40, /* Adding extra container width to provide more padding/whitespace */
+			ie6_fallback: true,
 			markup: '<div class="pp_pic_holder"> \
 						<div class="ppt">&nbsp;</div> \
 						<div class="pp_top"> \
@@ -134,7 +135,7 @@
 		$.prettyPhoto.initialize = function() {
 			settings = pp_settings;
 			
-			if($.browser.msie && parseInt($.browser.version) == 6) settings.theme = "light_square"; // Fallback to a supported theme for IE6
+			if(settings.ie6_fallback && $.browser.msie && parseInt($.browser.version) == 6) settings.theme = "light_square"; // Fallback to a supported theme for IE6
 			
 			// Find out if the picture is part of a set
 			theRel = $(this).attr('rel');
