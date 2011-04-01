@@ -20,6 +20,7 @@
 			default_height: 344,
 			counter_separator_label: '/', /* The separator for the gallery counter 1 "of" 2 */
 			theme: 'facebook', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+			horizontal_padding: 20, /* The padding on each side of the picture */
 			hideflash: false, /* Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto */
 			wmode: 'opaque', /* Set the flash wmode attribute */
 			autoplay: true, /* Automatically start videos: True/False */
@@ -28,7 +29,6 @@
 			keyboard_shortcuts: true, /* Set to false if you open forms inside prettyPhoto */
 			changepicturecallback: function(){}, /* Called everytime an item is shown/changed */
 			callback: function(){}, /* Called when prettyPhoto is closed */
-			container_padding_width: 40, /* Adding extra container width to provide more padding/whitespace */
 			ie6_fallback: true,
 			markup: '<div class="pp_pic_holder"> \
 						<div class="ppt">&nbsp;</div> \
@@ -562,7 +562,7 @@
 				width:Math.floor(imageWidth),
 				height:Math.floor(imageHeight),
 				containerHeight:Math.floor(pp_containerHeight),
-				containerWidth:Math.floor(pp_containerWidth) + settings.container_padding_width,
+				containerWidth:Math.floor(pp_containerWidth) + (settings.horizontal_padding * 2),
 				contentHeight:Math.floor(pp_contentHeight),
 				contentWidth:Math.floor(pp_contentWidth),
 				resized:resized
